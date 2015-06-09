@@ -2,7 +2,7 @@ var app = angular.module('app', []);
 
 app.controller('ball', function($scope){
 
-  var socket = io();
+  var socket = io('http://explode.herokuapp.com');
   $scope.fresh = true;
   $scope.score = 100;
 
@@ -55,7 +55,7 @@ app.directive('expand', function(){
 app.controller('player', function($scope){
 
   // socket
-  var socket = io();
+  var socket = io('http://explode.herokuapp.com');
   socket.emit('player');
   console.log('play');
 
