@@ -33,7 +33,7 @@ server.on('listening', onListening);
  * Socket.io
  */
 
-var io = require('socket.io').listen(server);
+var io = require('socket.io')(server);
 var socket_server = require('../socket.io/server');
 
 io.on('connection', function(socket){ socket_server.connect(socket) });

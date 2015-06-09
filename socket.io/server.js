@@ -15,6 +15,7 @@ var question_idx = -1;
 exports.connect = function(socket){
   // console.log('a user connected!');
   socket.on('player', function(){
+    console.log('player in');
     socket.emit('questions', JSON.stringify(questions));
   });
 
