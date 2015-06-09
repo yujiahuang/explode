@@ -36,7 +36,10 @@ server.on('listening', onListening);
 var io = require('socket.io')(server);
 var socket_server = require('../socket.io/server');
 
-io.on('connection', function(socket){ socket_server.connect(socket) });
+io.on('connection', function(socket){ 
+  socket.emit('connect');
+  socket_server.connect(socket) 
+});
 
 
 /**
