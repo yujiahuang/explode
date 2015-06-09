@@ -28,6 +28,6 @@ gulp.task('start', function () {
   , ignore: ['public/*', './views/**/*', './src/**/*']
   , env: { 'PORT': 32382, 'NODE_ENV': 'development', 'DEBUG': 'ExplodeBall:*' }
   })
-})
+});
 
 gulp.task('default', ['less', 'start', 'watch']);
