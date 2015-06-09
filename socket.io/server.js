@@ -20,6 +20,7 @@ exports.connect = function(socket){
   });
 
   socket.on('start', function(){
+    console.log('start');
     socket.broadcast.emit('start');
     question_idx = 0;
   });
