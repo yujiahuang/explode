@@ -2,7 +2,11 @@ var app = angular.module('app', []);
 
 app.controller('ball', function($scope){
 
-  var socket = io('http://explode.herokuapp.com');
+  socket.on("connect", function() {
+    console.log('connect');
+  });
+
+  var socket = io();
   $scope.fresh = true;
   $scope.score = 100;
 
@@ -54,10 +58,15 @@ app.directive('expand', function(){
 
 app.controller('player', function($scope){
 
+  var socket = io();
+
+  
+  socket.on("connect", function() {
+    console.log('connect');
+    socket.emit('player');
+    console.log('play');
+  });
   // socket
-  var socket = io('http://explode.herokuapp.com');
-  socket.emit('player');
-  console.log('play');
 
   $scope.question_idx = -1;
   socket.on('questions', function(msg){
