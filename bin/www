@@ -34,6 +34,7 @@ server.on('listening', onListening);
  */
 
 var io = require('socket.io')(server);
+io.set('transports', ['websocket']);
 var socket_server = require('../socket.io/server');
 
 io.on('connection', function(socket){ 
