@@ -8,6 +8,7 @@ app.controller('ball', function($scope){
 
   $scope.touchBall = function(){
     if($scope.fresh){
+      console.log('start');
       socket.emit('start');
       $scope.fresh = false;
     }
@@ -56,6 +57,7 @@ app.controller('player', function($scope){
   // socket
   var socket = io();
   socket.emit('player');
+  console.log('play');
 
   $scope.question_idx = -1;
   socket.on('questions', function(msg){
