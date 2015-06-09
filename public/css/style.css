@@ -1,0 +1,206 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+.ball-wrapper {
+  height: 100%;
+  overflow: hidden;
+  line-height: 100vh;
+  text-align: center;
+}
+.ball-wrapper .ball {
+  width: 10%;
+  height: 10vw;
+  border-radius: 10000px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #e21856;
+  color: #fff;
+  text-align: center;
+  line-height: 10vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+}
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.ball-wrapper .pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1.8s;
+  animation-duration: 1.8s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(0.99);
+    transform: scale(0.99);
+  }
+  25% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  50% {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+  }
+  75% {
+    -webkit-transform: scale(0.97);
+    transform: scale(0.97);
+  }
+  87% {
+    -webkit-transform: scale(0.97);
+    transform: scale(0.97);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(0.99);
+    transform: scale(0.99);
+  }
+  25% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+  50% {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+  }
+  75% {
+    -webkit-transform: scale(0.97);
+    transform: scale(0.97);
+  }
+  87% {
+    -webkit-transform: scale(0.97);
+    transform: scale(0.97);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.ball-wrapper .bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+@-webkit-keyframes explode {
+  0% {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+  }
+  100% {
+    -webkit-transform: scale(3);
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+@keyframes explode {
+  0% {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+  }
+  100% {
+    -webkit-transform: scale(3);
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+.ball-wrapper .explode {
+  -webkit-animation-name: explode;
+  animation-name: explode;
+  -webkit-animation-duration: 0.08s;
+  animation-duration: 0.08s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+.ball-wrapper .congrats {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 100px;
+}
+.player-wrapper {
+  text-align: center;
+  line-height: 2em;
+  color: #666;
+}
+.player-wrapper .choices {
+  position: relative;
+}
+.player-wrapper .choices .choice {
+  position: relative;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 200px;
+  border: 2px solid #666;
+  cursor: pointer;
+}
+.player-wrapper .choices .choice.selected {
+  color: #e29212;
+  border-color: #e29212;
+}
+.player-wrapper .choices .choice.answer {
+  color: #92c212;
+  border-color: #92c212;
+}
+.player-wrapper .send {
+  position: relative;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 200px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  border: 2px solid #34a2c1;
+  background-color: #34a2c1;
+  cursor: pointer;
+}

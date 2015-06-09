@@ -1,0 +1,139 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+// ball
+.ball-wrapper {
+  
+  height: 100%;
+  overflow: hidden;
+  line-height: 100vh;
+  text-align: center;
+
+  .ball {
+    width: 10%;
+    height: 10vw;
+    border-radius: 10000px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #e21856;
+    color: #fff;
+    text-align: center;
+    line-height: 10vw;
+    font-size: 1.5vw;
+    cursor: pointer;
+  }
+
+  // pulse
+  @max-pulse-size: 1.05;
+  @min-pulse-size: 1;
+
+  @keyframes pulse {
+    0%   { transform: scale(@min-pulse-size); }
+    50%  { transform: scale(@max-pulse-size); }
+    100% { transform: scale(@min-pulse-size); }
+  }
+  .pulse {
+    animation-name: pulse;
+    animation-duration: 1.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  // bounce
+  @bounce-size-0: 0.99;
+  @bounce-size-25: 0.95;
+  @bounce-size-50: 1.08;
+  @bounce-size-75: 0.97;
+  @bounce-size-87: 1.02;
+  @bounce-size-100: 1;
+
+  @keyframes bounce {
+    0%   { transform: scale(@bounce-size-0); }
+    25%  { transform: scale(@bounce-size-25); }
+    50%  { transform: scale(@bounce-size-50); }
+    75%  { transform: scale(@bounce-size-75); }
+    87%  { transform: scale(@bounce-size-75); }
+    100% { transform: scale(@bounce-size-100); }
+  }
+
+  .bounce {
+    animation-name: bounce;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+  }
+
+  // explode
+  @keyframes explode {
+    0%   { transform: scale(1.08); }
+    100% { transform: scale(3); opacity: 0;}
+  }
+  .explode {
+    animation-name: explode;
+    animation-duration: 0.08s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+  }
+
+  // congrats
+  .congrats {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 100px;
+  }
+  
+}
+
+// player
+.player-wrapper {
+  text-align: center;
+  line-height: 2em;
+  color: #666;
+  .question {
+    
+  }
+  .choices {
+    position: relative;
+    .choice {
+      position: relative;
+      margin: 20px auto;
+      width: 100%;
+      max-width: 200px;
+      border: 2px solid #666;
+      cursor: pointer;
+      &.selected {
+        color: #e29212;
+        border-color: #e29212;
+      }
+      &.answer {
+        color: #92c212;
+        border-color: #92c212;
+      }
+    }
+  }
+  .send {
+    position: relative;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    border: 2px solid #34a2c1;
+    background-color: #34a2c1;
+    cursor: pointer;
+  }
+}
+
+

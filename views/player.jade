@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .player-wrapper(ng-controller='player')
+    .question(ng-bind="questions[question_idx].question")
+    .choices
+      .choice(ng-repeat="c in questions[question_idx].choices" 
+        ng-bind="c" ng-click="select($index)" 
+        ng-class="{ selected: selected==$index, answer: isAnswer($index) }")
+    .send(ng-click="send()" ng-show="question_idx>=0") 送出
+    .description 大家一起回答問題，把中間那顆球炸掉吧！
+  script(src='/socket.io/socket.io.js')

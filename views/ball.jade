@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  .ball-wrapper(ng-controller='ball')
+    .ball.pulse.bounce(ng-click='touchBall()' ng-bind='score' score='{{score}}' expand)
+    .congrats(ng-show='score>=10000') 炸掉了！
+  script(src='/socket.io/socket.io.js')

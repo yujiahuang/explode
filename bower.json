@@ -1,0 +1,18 @@
+{
+  "name": "ExplodeBall",
+  "version": "0.0.0",
+  "authors": [
+    "Kevin Huang <kevinhuangdreamer@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.0"
+  }
+}
