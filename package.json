@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node node_modules/gulp/bin/gulp start"
+    "start": "DEBUG=ExplodeBall:* node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.12.4",
