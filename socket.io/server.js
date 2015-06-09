@@ -14,6 +14,11 @@ var question_idx = -1;
 
 exports.connect = function(socket){
   console.log('a user connected!');
+
+  socket.on('disconnected', function(){
+    console.log('a user disconnected!');
+  });
+
   socket.on('player', function(){
     console.log('player in');
     socket.emit('questions', JSON.stringify(questions));
