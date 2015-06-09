@@ -2,11 +2,12 @@ var app = angular.module('app', []);
 
 app.controller('ball', function($scope){
 
+
+  var socket = io();
   socket.on("connect", function() {
     console.log('connect');
   });
 
-  var socket = io();
   $scope.fresh = true;
   $scope.score = 100;
 
@@ -58,9 +59,8 @@ app.directive('expand', function(){
 
 app.controller('player', function($scope){
 
-  var socket = io();
+  var socket = io.connect();
 
-  
   socket.on("connect", function() {
     console.log('connect');
     socket.emit('player');
